@@ -1,4 +1,4 @@
-# Eduvui Landing Page
+# course Landing Page
 
 A modern, fully responsive landing page built with raw HTML and Tailwind CSS. This project serves as a pixel-perfect recreation of the provided Figma design for an educational platform / coaching service.
 
