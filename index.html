@@ -1,0 +1,1548 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Landing Page - Tailwind CSS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#4328eb",
+              secondary: "#2812A2",
+              accent: "#FF7B29",
+              dark: "#1e1e1e",
+              light: "#f5f7fa",
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              heading: ["Poppins", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap");
+
+      .hero-gradient {
+        background: linear-gradient(135deg, #4b26df 0%, #1e0964 100%);
+      }
+
+      .why-learn-gradient {
+        background: linear-gradient(180deg, #4b26df 0%, #30169b 100%);
+      }
+
+      .subscribe-gradient {
+        background: linear-gradient(90deg, #6c4af5 0%, #d845f0 100%);
+      }
+
+      .footer-bg {
+        background: linear-gradient(180deg, #9960ff 0%, #1e4de6 100%);
+      }
+    </style>
+  </head>
+  <body class="font-sans text-gray-800 bg-white">
+    <!-- Header / Navbar -->
+    <header class="bg-white sticky top-0 z-50">
+      <div class="container mx-auto px-4 lg:px-8 max-w-7xl">
+        <div class="flex items-center justify-between py-4">
+          <!-- Logo -->
+          <div class="flex-shrink-0">
+            <img
+              src="./Assets/Askmeidentity 2.png"
+              alt="Askmeidentity"
+              class="h-10"
+            />
+          </div>
+
+          <!-- Desktop Menu -->
+          <nav
+            class="hidden md:flex space-x-10 font-bold text-sm text-gray-900"
+          >
+            <a href="#" class="hover:text-primary transition-colors">Home</a>
+            <a href="#" class="hover:text-primary transition-colors">About</a>
+            <a href="#" class="hover:text-primary transition-colors">Courses</a>
+            <a href="#" class="hover:text-primary transition-colors">Contact</a>
+          </nav>
+
+          <!-- Icons & Buttons -->
+          <div class="hidden md:flex items-center space-x-5">
+            <button class="relative text-gray-700 hover:text-primary">
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                ></path>
+              </svg>
+              <span
+                class="absolute -top-1.5 -right-1.5 bg-teal-400 text-white text-[10px] w-3.5 h-3.5 flex items-center justify-center rounded-full font-bold"
+                >0</span
+              >
+            </button>
+            <button class="text-gray-700 hover:text-primary">
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                ></path>
+              </svg>
+            </button>
+            <button class="text-gray-700 hover:text-primary">
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                ></path>
+              </svg>
+            </button>
+
+            <div class="pl-4 flex items-center space-x-6">
+              <a
+                href="#"
+                class="text-gray-600 font-semibold text-sm hover:text-primary"
+                >Login</a
+              >
+              <a
+                href="#"
+                class="bg-[#5a4dd4] text-white px-6 py-2.5 rounded-lg text-sm font-semibold hover:bg-opacity-90 shadow-[0_4px_14px_0_rgba(90,77,212,0.39)]"
+                >Signup</a
+              >
+            </div>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <button class="md:hidden text-gray-700 outline-none">
+            <svg
+              class="w-8 h-8"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section
+      class="bg-gradient-to-r from-[#4f20dc] via-[#5229d1] to-[#6035cb] text-white relative overflow-hidden pt-16 pb-0 shadow-inner"
+    >
+      <div class="container mx-auto px-4 lg:px-8 max-w-7xl">
+        <div class="flex flex-col lg:flex-row items-center relative z-10">
+          <!-- Left Content -->
+          <div
+            class="w-full lg:w-1/2 pr-0 lg:pr-12 text-center lg:text-left mb-12 lg:mb-0 pb-16"
+          >
+            <p
+              class="text-[11px] tracking-[0.15em] font-semibold mb-6 text-white/80"
+            >
+              SUCCESSFUL COACHES ARE VISIONARIES
+            </p>
+            <h1
+              class="font-heading text-5xl md:text-6xl font-bold leading-[1.1] mb-8 tracking-tight drop-shadow-sm"
+            >
+              Good
+              <span class="text-[#0e3b9c] drop-shadow-none">coaching</span> is
+              <br />
+              good teaching &amp; <br />
+              nothing else.
+            </h1>
+            <div
+              class="flex flex-wrap justify-center lg:justify-start gap-4 mb-12"
+            >
+              <a
+                href="#"
+                class="border border-white/50 rounded-lg px-6 py-2.5 font-semibold text-sm hover:bg-white/10 transition-all"
+                >View Courses</a
+              >
+              <a
+                href="#"
+                class="px-6 py-2.5 font-semibold text-sm hover:underline decoration-1 underline-offset-4"
+                >Get Free Consultation</a
+              >
+            </div>
+
+            <!-- Search Bar -->
+            <div
+              class="bg-white rounded-lg p-1.5 flex max-w-lg mx-auto lg:mx-0 shadow-lg relative z-20"
+            >
+              <input
+                type="text"
+                placeholder="What do you want to learn today?"
+                class="flex-grow px-4 outline-none text-sm text-gray-800 placeholder-gray-500 rounded-l-lg bg-transparent"
+              />
+              <button
+                class="bg-[#5a4dd4] text-white px-5 py-2.5 rounded-md text-sm font-semibold hover:bg-opacity-90 flex items-center shadow-md"
+              >
+                <svg
+                  class="w-4 h-4 mr-1.5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                  ></path>
+                </svg>
+                Search
+              </button>
+            </div>
+          </div>
+
+          <!-- Right Content (Image & Quote) -->
+          <div
+            class="w-full lg:w-1/2 relative flex justify-end items-end h-[500px] lg:h-[600px]"
+          >
+            <!-- Radiant Gradient Glow behind image -->
+            <div
+              class="absolute bg-gradient-to-tr from-[#8a42ff] via-[#4f20dc] to-[#00c8e0] blur-[100px] w-[500px] h-[500px] bottom-10 -right-10 z-0 pointer-events-none rounded-full opacity-80"
+            ></div>
+
+            <!-- The girl image -->
+            <img
+              src="./Assets/brunette-woman-hugging-laptop_1-removebg-preview.png"
+              alt="Student with laptop"
+              class="h-full object-contain object-bottom relative z-10 pl-20 drop-shadow-2xl pb-16"
+            />
+
+            <!-- Floating Quote Block -->
+            <div
+              class="absolute top-[25%] -left-8 lg:-left-4 transform flex items-start z-20 xl:max-w-[280px]"
+            >
+              <div
+                class="bg-[#00c8e0] rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0 mt-1"
+              >
+                <span
+                  class="text-white text-base font-serif leading-none rotate-180 transform translate-y-[-1px]"
+                  >"</span
+                >
+              </div>
+              <div class="border-l border-white/20 pl-4 py-1">
+                <p class="text-sm font-bold text-white mb-1.5 tracking-wide">
+                  Shyam
+                </p>
+                <p class="text-xs text-white/90 mb-2 leading-relaxed">
+                  In a coaching role, you ask the questions and rely more on
+                  your staff, who become the experts, to provide the
+                  information.
+                </p>
+                <p class="text-xs font-bold text-[#00c8e0]">4.9</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Arch Decorative Lines -->
+        <div
+          class="absolute bottom-0 left-[35%] w-[320px] h-[280px] pointer-events-none"
+        >
+          <div
+            class="absolute bottom-0 w-full h-full border-t-[1px] border-l-[1px] border-r-[1px] border-white/20 rounded-t-[160px] rounded-b-none border-dashed"
+          ></div>
+          <div
+            class="absolute bottom-0 left-6 right-6 top-6 border-t-[1px] border-l-[1px] border-r-[1px] border-white/10 rounded-t-[140px] rounded-b-none"
+          ></div>
+          <div
+            class="absolute bottom-0 left-12 right-12 top-12 border-t-[1px] border-l-[1px] border-r-[1px] border-white/10 rounded-t-[120px] rounded-b-none"
+          ></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Brands Section -->
+    <section
+      class="bg-gradient-to-r from-purple-800 via-indigo-800 to-purple-800 py-10"
+    >
+      <div class="container mx-auto px-4">
+        <div
+          class="flex flex-wrap justify-center items-center gap-10 lg:gap-20 opacity-80"
+        >
+          <img
+            src="./Assets/Link ⏵ brand1.png.png"
+            alt="Spotify"
+            class="h-8 max-w-full grayscale brightness-200 hover:grayscale-0 transition-all duration-300"
+          />
+          <img
+            src="./Assets/Link ⏵ brand3.png.png"
+            alt="Amazon"
+            class="h-8 max-w-full grayscale brightness-200 hover:grayscale-0 transition-all duration-300"
+          />
+          <img
+            src="./Assets/Link ⏵ brand1.png.png"
+            alt="Spotify"
+            class="h-8 max-w-full grayscale brightness-200 hover:grayscale-0 transition-all duration-300"
+          />
+          <img
+            src="./Assets/Link ⏵ brand6.png.png"
+            alt="Cisco"
+            class="h-8 max-w-full grayscale brightness-200 hover:grayscale-0 transition-all duration-300"
+          />
+          <img
+            src="./Assets/Link ⏵ brand5.png.png"
+            alt="Logitech"
+            class="h-8 max-w-full grayscale brightness-200 hover:grayscale-0 transition-all duration-300"
+          />
+          <img
+            src="./Assets/Link ⏵ brand3.png.png"
+            alt="Amazon"
+            class="h-8 max-w-full grayscale brightness-200 hover:grayscale-0 transition-all duration-300"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Why learn with our courses? -->
+    <section
+      class="why-learn-gradient py-20 text-white relative overflow-hidden"
+    >
+      <div class="container mx-auto px-4 lg:px-8 text-center relative z-10">
+        <h2 class="font-heading text-4xl font-bold mb-4">
+          Why learn with our courses?
+        </h2>
+        <p class="text-blue-200 max-w-2xl mx-auto mb-16 px-4">
+          We are providing the best courses and top classes. And extraordinary
+          placement training.....
+        </p>
+
+        <div
+          class="flex flex-col md:flex-row justify-center items-start gap-8 md:gap-4 lg:gap-12 relative max-w-5xl mx-auto"
+        >
+          <div class="flex-1 flex flex-col items-center">
+            <img
+              src="./Assets/Icon.png"
+              alt="Learn"
+              class="h-20 mb-6 bg-white/10 p-4 rounded-xl shadow-lg border border-white/20 hover:-translate-y-2 transition-transform duration-300"
+            />
+            <h3 class="text-xl font-bold mb-3">01. Learn</h3>
+            <p class="text-blue-100 text-sm max-w-xs leading-relaxed">
+              Learn continually. There is always "one more thing" to learn.
+            </p>
+          </div>
+
+          <!-- Divider md only -->
+          <div
+            class="hidden md:block w-px h-32 bg-white/20 mt-8 border-l border-dashed border-white/50"
+          ></div>
+
+          <div class="flex-1 flex flex-col items-center">
+            <img
+              src="./Assets/Icon (1).png"
+              alt="Graduate"
+              class="h-20 mb-6 bg-white/10 p-4 rounded-xl shadow-lg border border-white/20 hover:-translate-y-2 transition-transform duration-300"
+            />
+            <h3 class="text-xl font-bold mb-3">02. Graduate</h3>
+            <p class="text-blue-100 text-sm max-w-xs leading-relaxed">
+              Be bold, be courageous, be your best.
+            </p>
+          </div>
+
+          <div
+            class="hidden md:block w-px h-32 bg-white/20 mt-8 border-l border-dashed border-white/50"
+          ></div>
+
+          <div class="flex-1 flex flex-col items-center">
+            <img
+              src="./Assets/Icon (2).png"
+              alt="Work"
+              class="h-20 mb-6 bg-white/10 p-4 rounded-xl shadow-lg border border-white/20 hover:-translate-y-2 transition-transform duration-300"
+            />
+            <h3 class="text-xl font-bold mb-3">03. Work</h3>
+            <p class="text-blue-100 text-sm max-w-xs leading-relaxed">
+              Great companies are built in the office, with hard work put in by
+              team.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="absolute top-1/4 -left-20 w-80 h-80 rounded-full border border-white/5 opacity-50 pointer-events-none"
+      ></div>
+      <div
+        class="absolute top-1/4 -left-10 w-60 h-60 rounded-full border border-white/10 border-dashed opacity-50 pointer-events-none"
+      ></div>
+    </section>
+
+    <!-- Top Categories -->
+    <section class="bg-blue-50 py-20 pb-32">
+      <div class="container mx-auto px-4 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="font-heading text-3xl md:text-4xl font-bold mb-3">
+            Top <span class="text-blue-600">Categories</span>
+          </h2>
+          <p class="text-gray-600 font-medium">
+            100+ unique online course list designs
+          </p>
+        </div>
+
+        <div
+          class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 max-w-6xl mx-auto"
+        >
+          <!-- Category 1 -->
+          <a
+            href="#"
+            class="bg-white rounded-xl p-8 flex flex-col items-center justify-center text-center shadow-md hover:shadow-xl transition-all duration-300 group border border-gray-100 hover:border-blue-100 hover:-translate-y-2"
+          >
+            <div
+              class="w-16 h-16 rounded-lg bg-pink-100 text-pink-500 mb-6 flex items-center justify-center group-hover:scale-110 transition-transform"
+            >
+              <img
+                src="./Assets/div.features-box-image.png"
+                alt="Digital Marketing"
+                class="w-8 h-8 object-contain filter drop-shadow-sm"
+              />
+            </div>
+            <h3
+              class="font-bold text-gray-800 text-sm mb-2 group-hover:text-blue-600 transition-colors"
+            >
+              Digital Marketing
+            </h3>
+            <p class="text-xs text-gray-500 font-medium">25 Courses</p>
+          </a>
+
+          <!-- Category 2 -->
+          <a
+            href="#"
+            class="bg-white rounded-xl p-8 flex flex-col items-center justify-center text-center shadow-md hover:shadow-xl transition-all duration-300 group border border-gray-100 hover:border-blue-100 hover:-translate-y-2"
+          >
+            <div
+              class="w-16 h-16 rounded-lg bg-green-100 text-green-500 mb-6 flex items-center justify-center group-hover:scale-110 transition-transform"
+            >
+              <img
+                src="./Assets/div.features-box-image (1).png"
+                alt="Web Development"
+                class="w-8 h-8 object-contain filter drop-shadow-sm"
+              />
+            </div>
+            <h3
+              class="font-bold text-gray-800 text-sm mb-2 group-hover:text-blue-600 transition-colors"
+            >
+              Web Development
+            </h3>
+            <p class="text-xs text-gray-500 font-medium">16 Courses</p>
+          </a>
+
+          <!-- Category 3 -->
+          <a
+            href="#"
+            class="bg-white rounded-xl p-8 flex flex-col items-center justify-center text-center shadow-md hover:shadow-xl transition-all duration-300 group border border-gray-100 hover:border-blue-100 hover:-translate-y-2"
+          >
+            <div
+              class="w-16 h-16 rounded-lg bg-indigo-100 text-indigo-500 mb-6 flex items-center justify-center group-hover:scale-110 transition-transform"
+            >
+              <img
+                src="./Assets/div.features-box-image (2).png"
+                alt="Art & Humanities"
+                class="w-8 h-8 object-contain filter drop-shadow-sm"
+              />
+            </div>
+            <h3
+              class="font-bold text-gray-800 text-sm mb-2 group-hover:text-blue-600 transition-colors"
+            >
+              Art & Humanities
+            </h3>
+            <p class="text-xs text-gray-500 font-medium">76 Courses</p>
+          </a>
+
+          <!-- Category 4 -->
+          <a
+            href="#"
+            class="bg-white rounded-xl p-8 flex flex-col items-center justify-center text-center shadow-md hover:shadow-xl transition-all duration-300 group border border-gray-100 hover:border-blue-100 hover:-translate-y-2"
+          >
+            <div
+              class="w-16 h-16 rounded-lg bg-yellow-100 text-yellow-500 mb-6 flex items-center justify-center group-hover:scale-110 transition-transform"
+            >
+              <img
+                src="./Assets/div.features-box-image (3).png"
+                alt="Personal Development"
+                class="w-8 h-8 object-contain filter drop-shadow-sm"
+              />
+            </div>
+            <h3
+              class="font-bold text-gray-800 text-sm mb-2 group-hover:text-blue-600 transition-colors"
+            >
+              Personal Development
+            </h3>
+            <p class="text-xs text-gray-500 font-medium">22 Courses</p>
+          </a>
+
+          <!-- Category 5 -->
+          <a
+            href="#"
+            class="bg-white rounded-xl p-8 flex flex-col items-center justify-center text-center shadow-md hover:shadow-xl transition-all duration-300 group border border-gray-100 hover:border-blue-100 hover:-translate-y-2"
+          >
+            <div
+              class="w-16 h-16 rounded-lg bg-teal-100 text-teal-500 mb-6 flex items-center justify-center group-hover:scale-110 transition-transform"
+            >
+              <img
+                src="./Assets/div.features-box-image (4).png"
+                alt="IT and Software"
+                class="w-8 h-8 object-contain filter drop-shadow-sm"
+              />
+            </div>
+            <h3
+              class="font-bold text-gray-800 text-sm mb-2 group-hover:text-blue-600 transition-colors"
+            >
+              IT and Software
+            </h3>
+            <p class="text-xs text-gray-500 font-medium">110 Courses</p>
+          </a>
+
+          <!-- Category 6 -->
+          <a
+            href="#"
+            class="bg-white rounded-xl p-8 flex flex-col items-center justify-center text-center shadow-md hover:shadow-xl transition-all duration-300 group border border-gray-100 hover:border-blue-100 hover:-translate-y-2"
+          >
+            <div
+              class="w-16 h-16 rounded-lg bg-emerald-100 text-emerald-500 mb-6 flex items-center justify-center group-hover:scale-110 transition-transform"
+            >
+              <img
+                src="./Assets/div.features-box-image (5).png"
+                alt="Graphic Design"
+                class="w-8 h-8 object-contain filter drop-shadow-sm"
+              />
+            </div>
+            <h3
+              class="font-bold text-gray-800 text-sm mb-2 group-hover:text-blue-600 transition-colors"
+            >
+              Graphic Design
+            </h3>
+            <p class="text-xs text-gray-500 font-medium">85 Courses</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Courses -->
+    <section class="bg-blue-50 py-20 relative">
+      <div class="container mx-auto px-4 lg:px-8 relative z-10">
+        <div class="text-center mb-16 relative">
+          <div
+            class="absolute -top-12 left-10 w-16 h-16 rounded-full border-8 border-cyan-100 hidden md:block"
+          ></div>
+          <h2 class="font-heading text-3xl md:text-4xl font-bold mb-3">
+            Featured <span class="text-blue-500">Course</span>
+          </h2>
+          <p class="text-gray-600 font-medium uppercase tracking-wider text-sm">
+            THE FEATURE COURSES ARE WE INVENTED OUR TEACHING PART
+          </p>
+        </div>
+
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16"
+        >
+          <!-- Course 1 -->
+          <div
+            class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group"
+          >
+            <div class="relative overflow-hidden aspect-video bg-gray-100">
+              <img
+                src="./Assets/Mask group.png"
+                alt="Motion Graphics"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div class="p-6">
+              <div
+                class="flex justify-between items-center text-xs text-gray-500 font-medium mb-3"
+              >
+                <span class="flex items-center"
+                  ><svg
+                    class="w-4 h-4 mr-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                    ></path></svg
+                  >1,957 Students</span
+                >
+                <span class="flex items-center"
+                  ><svg
+                    class="w-4 h-4 mr-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                    ></path></svg
+                  >01h 59m</span
+                >
+              </div>
+              <h3
+                class="font-bold text-gray-800 text-lg mb-6 leading-tight group-hover:text-blue-600 transition-colors line-clamp-2"
+              >
+                Motion Graphics: Create a Nice Typography Animation
+              </h3>
+              <div
+                class="flex justify-between items-center pt-4 border-t border-gray-100"
+              >
+                <span class="font-bold text-gray-900">Rs.499</span>
+                <button class="text-gray-400 hover:text-blue-600">
+                  <svg
+                    class="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Course 2 -->
+          <div
+            class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group"
+          >
+            <div class="relative overflow-hidden aspect-video bg-gray-100">
+              <img
+                src="./Assets/Mask group (1).png"
+                alt="Advance PHP"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div class="p-6">
+              <div
+                class="flex justify-between items-center text-xs text-gray-500 font-medium mb-3"
+              >
+                <span class="flex items-center"
+                  ><svg
+                    class="w-4 h-4 mr-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                    ></path></svg
+                  >9,575 Students</span
+                >
+                <span class="flex items-center"
+                  ><svg
+                    class="w-4 h-4 mr-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                    ></path></svg
+                  >01h 59m</span
+                >
+              </div>
+              <h3
+                class="font-bold text-gray-800 text-lg mb-6 leading-tight group-hover:text-blue-600 transition-colors line-clamp-2"
+              >
+                Advance PHP knowledge with JS to make smart web
+              </h3>
+              <div
+                class="flex justify-between items-center pt-4 border-t border-gray-100"
+              >
+                <span class="font-bold text-gray-900">Rs.499</span>
+                <button class="text-gray-400 hover:text-blue-600">
+                  <svg
+                    class="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Course 3 -->
+          <div
+            class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group"
+          >
+            <div class="relative overflow-hidden aspect-video bg-gray-100">
+              <img
+                src="./Assets/Mask group (2).png"
+                alt="Education Software"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div class="p-6">
+              <div
+                class="flex justify-between items-center text-xs text-gray-500 font-medium mb-3"
+              >
+                <span class="flex items-center"
+                  ><svg
+                    class="w-4 h-4 mr-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                    ></path></svg
+                  >2,957 Students</span
+                >
+                <span class="flex items-center"
+                  ><svg
+                    class="w-4 h-4 mr-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                    ></path></svg
+                  >02h 49m</span
+                >
+              </div>
+              <h3
+                class="font-bold text-gray-800 text-lg mb-6 leading-tight group-hover:text-blue-600 transition-colors line-clamp-2"
+              >
+                Education Software and PHP and JS System Script
+              </h3>
+              <div
+                class="flex justify-between items-center pt-4 border-t border-gray-100"
+              >
+                <span class="font-bold text-gray-900">Rs.499</span>
+                <button class="text-gray-400 hover:text-blue-600">
+                  <svg
+                    class="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Course 4 -->
+          <div
+            class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group"
+          >
+            <div class="relative overflow-hidden aspect-video bg-gray-100">
+              <img
+                src="./Assets/Mask group (3).png"
+                alt="Financial Analyst"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div class="p-6">
+              <div
+                class="flex justify-between items-center text-xs text-gray-500 font-medium mb-3"
+              >
+                <span class="flex items-center"
+                  ><svg
+                    class="w-4 h-4 mr-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                    ></path></svg
+                  >5,457 Students</span
+                >
+                <span class="flex items-center"
+                  ><svg
+                    class="w-4 h-4 mr-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                    ></path></svg
+                  >01h 49m</span
+                >
+              </div>
+              <h3
+                class="font-bold text-gray-800 text-lg mb-6 leading-tight group-hover:text-blue-600 transition-colors line-clamp-2"
+              >
+                The Complete Financial Analyst Training & Investing
+              </h3>
+              <div
+                class="flex justify-between items-center pt-4 border-t border-gray-100"
+              >
+                <span class="font-bold text-gray-900">Rs.499</span>
+                <button class="text-gray-400 hover:text-blue-600">
+                  <svg
+                    class="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Course 5 -->
+          <div
+            class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group"
+          >
+            <div class="relative overflow-hidden aspect-video bg-gray-100">
+              <img
+                src="./Assets/Mask group (4).png"
+                alt="Marketing 2023"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div class="p-6">
+              <div
+                class="flex justify-between items-center text-xs text-gray-500 font-medium mb-3"
+              >
+                <span class="flex items-center"
+                  ><svg
+                    class="w-4 h-4 mr-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                    ></path></svg
+                  >595 Students</span
+                >
+                <span class="flex items-center"
+                  ><svg
+                    class="w-4 h-4 mr-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                    ></path></svg
+                  >01h 49m</span
+                >
+              </div>
+              <h3
+                class="font-bold text-gray-800 text-lg mb-6 leading-tight group-hover:text-blue-600 transition-colors line-clamp-2"
+              >
+                Marketing 2023: Complete Guide To Instagram Growth
+              </h3>
+              <div
+                class="flex justify-between items-center pt-4 border-t border-gray-100"
+              >
+                <span class="font-bold text-gray-900">Rs.499</span>
+                <button class="text-gray-400 hover:text-blue-600">
+                  <svg
+                    class="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Course 6 -->
+          <div
+            class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group"
+          >
+            <div class="relative overflow-hidden aspect-video bg-gray-100">
+              <img
+                src="./Assets/Mask group (5).png"
+                alt="3D Modelling"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div class="p-6">
+              <div
+                class="flex justify-between items-center text-xs text-gray-500 font-medium mb-3"
+              >
+                <span class="flex items-center"
+                  ><svg
+                    class="w-4 h-4 mr-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                    ></path></svg
+                  >458 Students</span
+                >
+                <span class="flex items-center"
+                  ><svg
+                    class="w-4 h-4 mr-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                    ></path></svg
+                  >03h 00m</span
+                >
+              </div>
+              <h3
+                class="font-bold text-gray-800 text-lg mb-6 leading-tight group-hover:text-blue-600 transition-colors line-clamp-2"
+              >
+                Learn 3D Modelling and Design for Beginners
+              </h3>
+              <div
+                class="flex justify-between items-center pt-4 border-t border-gray-100"
+              >
+                <span class="font-bold text-gray-900">Rs.499</span>
+                <button class="text-gray-400 hover:text-blue-600">
+                  <svg
+                    class="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <a
+            href="#"
+            class="inline-block bg-[#4864e6] text-white px-8 py-3 rounded-md font-semibold hover:bg-blue-700 transition-colors shadow-md"
+            >Explore courses</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Video Banner / Decorative -->
+    <section class="bg-white py-20 overflow-hidden relative">
+      <div class="container mx-auto px-4 lg:px-8 text-center">
+        <!-- Newsletter / Subscribe Card -->
+        <div
+          class="subscribe-gradient text-white rounded-3xl p-8 md:p-12 max-w-4xl mx-auto shadow-2xl relative overflow-hidden mb-24 transform hover:scale-[1.02] transition-transform duration-500"
+        >
+          <div class="relative z-10">
+            <h2 class="font-heading text-3xl md:text-4xl font-bold mb-4">
+              Subscribe For Get Update<br />Every New Courses
+            </h2>
+            <p class="text-white/80 text-sm mb-8 font-medium">
+              20k+ students daily learn with Eduvui. Subscribe for new courses.
+            </p>
+
+            <form
+              class="flex flex-col sm:flex-row max-w-md mx-auto gap-2 bg-white/20 p-1 md:p-2 rounded-lg md:rounded-full backdrop-blur-sm border border-white/30"
+            >
+              <input
+                type="email"
+                placeholder="enter your email"
+                class="flex-grow bg-transparent px-4 py-2 md:py-3 outline-none text-white placeholder-white/80 font-medium"
+                required
+              />
+              <button
+                type="submit"
+                class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 md:py-3 rounded-md md:rounded-full font-bold transition-colors"
+              >
+                Subscribe
+              </button>
+            </form>
+          </div>
+
+          <!-- Floating Avatars Decor -->
+          <img
+            src="./Assets/Ellipse 166.png"
+            class="absolute top-8 left-8 w-10 h-10 rounded-full border-2 border-white shadow-lg animate-bounce"
+            style="animation-duration: 3s"
+          />
+          <img
+            src="./Assets/Ellipse 167.png"
+            class="absolute bottom-12 left-1/4 w-12 h-12 rounded-full border-2 border-white shadow-lg animate-bounce"
+            style="animation-duration: 4s"
+          />
+          <img
+            src="./Assets/Ellipse 168.png"
+            class="absolute top-1/3 left-1/4 w-8 h-8 rounded-full border-2 border-white shadow-lg animate-bounce"
+            style="animation-duration: 2.5s"
+          />
+          <img
+            src="./Assets/Ellipse 166 (1).png"
+            class="absolute top-10 right-1/4 w-10 h-10 rounded-full border-2 border-white shadow-lg animate-bounce"
+            style="animation-duration: 3.5s"
+          />
+          <img
+            src="./Assets/Ellipse 167 (1).png"
+            class="absolute bottom-16 right-1/4 w-8 h-8 rounded-full border-2 border-white shadow-lg animate-bounce"
+            style="animation-duration: 2s"
+          />
+          <img
+            src="./Assets/Ellipse 168 (1).png"
+            class="absolute top-1/2 right-10 w-12 h-12 rounded-full border-2 border-white shadow-lg animate-bounce"
+            style="animation-duration: 4.5s"
+          />
+        </div>
+
+        <!-- Floating triangles - Abstract -->
+        <div
+          class="absolute right-10 top-1/3 text-blue-500 animate-pulse hidden lg:block"
+        >
+          <svg
+            width="40"
+            height="40"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M12 2L2 22H22L12 2Z" />
+          </svg>
+        </div>
+        <div
+          class="absolute left-10 top-1/2 text-blue-400 opacity-60 animate-pulse hidden lg:block"
+          style="transform: rotate(45deg)"
+        >
+          <svg
+            width="60"
+            height="60"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M12 2L2 22H22L12 2Z" />
+          </svg>
+        </div>
+
+        <!-- Video Presentation -->
+        <div
+          class="max-w-4xl mx-auto rounded-3xl overflow-hidden shadow-2xl relative group"
+        >
+          <img
+            src="./Assets/Rectangle 8691.png"
+            alt="Student studying"
+            class="w-full aspect-video object-cover transition-transform duration-700 group-hover:scale-105"
+          />
+          <div
+            class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors flex items-center justify-center"
+          >
+            <button
+              class="w-20 h-20 md:w-24 md:h-24 bg-white/30 backdrop-blur-md border border-white/50 rounded-full flex items-center justify-center relative hover:scale-110 transition-transform"
+            >
+              <div
+                class="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-r from-teal-400 to-purple-500 rounded-full flex items-center justify-center animate-pulse shadow-[0_0_30px_rgba(255,255,255,0.5)]"
+              >
+                <svg
+                  class="w-8 h-8 text-white ml-2"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+            </button>
+          </div>
+
+          <!-- Decorative Graphic next to video -->
+          <div class="absolute -bottom-8 -right-8 w-40 h-40 hidden md:block">
+            <!-- Creating that geometric shape design -->
+            <div class="grid grid-cols-2 grid-rows-2 h-full w-full opacity-90">
+              <div class="bg-teal-500 rounded-tl-full"></div>
+              <div class="bg-purple-600 rounded-tr-full"></div>
+              <div class="bg-yellow-400 rounded-bl-full"></div>
+              <div class="bg-pink-500 rounded-br-full"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="bg-blue-50 py-20 pb-24 relative overflow-hidden">
+      <div class="container mx-auto px-4 lg:px-8">
+        <div class="text-center mb-16 relative z-10">
+          <h2
+            class="font-heading text-3xl md:text-4xl font-bold mb-3 text-blue-700"
+          >
+            Testimonials
+          </h2>
+          <p class="text-gray-600 font-semibold text-lg">
+            What our student say about us
+          </p>
+        </div>
+
+        <div
+          class="absolute top-10 left-20 w-32 h-32 bg-blue-100 rounded-full rounded-br-none -z-0 hidden md:block opacity-50"
+        ></div>
+
+        <div
+          class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto relative z-10 pt-8"
+        >
+          <!-- Testimonial 1 -->
+          <div
+            class="bg-white p-8 pt-12 rounded-xl shadow-lg relative mt-12 md:mt-0 transition-transform hover:-translate-y-2"
+          >
+            <img
+              src="./Assets/Ellipse 166.png"
+              alt="Student"
+              class="absolute -top-10 left-1/2 transform -translate-x-1/2 w-20 h-20 rounded-full border-4 border-white shadow-md"
+            />
+            <p
+              class="text-gray-600 text-sm leading-relaxed mb-6 italic text-center"
+            >
+              "Such an amazing trainer and easily understand the entire
+              syllabus, and the guidance will be super and good to the way of
+              explaining."
+            </p>
+            <div class="flex justify-center text-yellow-400">
+              ★★★★<span class="text-gray-300">★</span>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 (Highlighted) -->
+          <div
+            class="bg-white p-8 pt-12 rounded-xl shadow-xl border border-blue-100 relative mt-12 md:mt-0 md:-translate-y-4 transition-transform hover:-translate-y-6 z-20"
+          >
+            <img
+              src="./Assets/Ellipse 167.png"
+              alt="Student"
+              class="absolute -top-10 left-1/2 transform -translate-x-1/2 w-20 h-20 rounded-full border-4 border-white shadow-md"
+            />
+            <p
+              class="text-gray-600 text-sm leading-relaxed mb-6 italic text-center font-medium"
+            >
+              "Such an amazing trainer and easily understand the entire
+              syllabus, and the guidance will be super and good to the way of
+              explaining."
+            </p>
+            <div class="flex justify-center text-yellow-400">
+              ★★★★<span class="text-gray-300">★</span>
+            </div>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div
+            class="bg-white p-8 pt-12 rounded-xl shadow-lg relative mt-12 md:mt-0 transition-transform hover:-translate-y-2"
+          >
+            <img
+              src="./Assets/Ellipse 168.png"
+              alt="Student"
+              class="absolute -top-10 left-1/2 transform -translate-x-1/2 w-20 h-20 rounded-full border-4 border-white shadow-md"
+            />
+            <p
+              class="text-gray-600 text-sm leading-relaxed mb-6 italic text-center"
+            >
+              "Such an amazing trainer and easily understand the entire
+              syllabus, and the guidance will be super and good to the way of
+              explaining."
+            </p>
+            <div class="flex justify-center text-yellow-400">
+              ★★★★<span class="text-gray-300">★</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Controls -->
+        <div
+          class="flex justify-end gap-3 max-w-6xl mx-auto mt-8 items-center text-blue-600"
+        >
+          <button
+            class="w-10 h-10 rounded-full border border-blue-600 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-colors"
+          >
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 19l-7-7 7-7"
+              ></path>
+            </svg>
+          </button>
+          <button
+            class="w-10 h-10 rounded-full border border-blue-600 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-colors"
+          >
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5l7 7-7 7"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-bg text-white pt-16 pb-6">
+      <div class="container mx-auto px-4 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+          <!-- Connect Info -->
+          <div class="lg:col-span-1">
+            <h3 class="font-bold text-xl mb-6 text-indigo-900">Connect</h3>
+            <img
+              src="./Assets/Askmeidentity 2.png"
+              alt="Logo"
+              class="h-10 mb-6 bg-white/20 p-1 rounded backdrop-blur-sm grayscale contrast-200 opacity-90"
+            />
+            <p class="text-sm text-indigo-100 leading-relaxed font-medium">
+              Sri Jaganath Nivas, 8-1-164/345/A/1, Pragati Colony,
+              Mailardevpally, Nawab Saheb Kunta, Hyd. 500005
+            </p>
+          </div>
+
+          <!-- Classes -->
+          <div>
+            <h3
+              class="font-bold text-lg mb-6 text-indigo-900 uppercase tracking-wide"
+            >
+              Classes
+            </h3>
+            <ul class="space-y-3 text-sm font-medium text-indigo-100">
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-white transition-colors hover:translate-x-1 inline-block transform duration-300"
+                  >Classroom courses</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-white transition-colors hover:translate-x-1 inline-block transform duration-300"
+                  >Virtual classroom courses</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-white transition-colors hover:translate-x-1 inline-block transform duration-300"
+                  >E-learning courses</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-white transition-colors hover:translate-x-1 inline-block transform duration-300"
+                  >Video Courses</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-white transition-colors hover:translate-x-1 inline-block transform duration-300"
+                  >Offline Courses</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Community -->
+          <div>
+            <h3
+              class="font-bold text-lg mb-6 text-indigo-900 uppercase tracking-wide"
+            >
+              Community
+            </h3>
+            <ul class="space-y-3 text-sm font-medium text-indigo-100">
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-white transition-colors hover:translate-x-1 inline-block transform duration-300"
+                  >Learners</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-white transition-colors hover:translate-x-1 inline-block transform duration-300"
+                  >Partners</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-white transition-colors hover:translate-x-1 inline-block transform duration-300"
+                  >Developers</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-white transition-colors hover:translate-x-1 inline-block transform duration-300"
+                  >Transactions</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-white transition-colors hover:translate-x-1 inline-block transform duration-300"
+                  >Blog</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Quick links -->
+          <div>
+            <h3
+              class="font-bold text-lg mb-6 text-indigo-900 uppercase tracking-wide"
+            >
+              Quick links
+            </h3>
+            <ul class="space-y-3 text-sm font-medium text-indigo-100">
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-white transition-colors hover:translate-x-1 inline-block transform duration-300"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-white transition-colors hover:translate-x-1 inline-block transform duration-300"
+                  >Professional Education</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-white transition-colors hover:translate-x-1 inline-block transform duration-300"
+                  >Courses</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-white transition-colors hover:translate-x-1 inline-block transform duration-300"
+                  >Admissions</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-white transition-colors hover:translate-x-1 inline-block transform duration-300"
+                  >Testimonial</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-white transition-colors hover:translate-x-1 inline-block transform duration-300"
+                  >Programs</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- More -->
+          <div>
+            <h3
+              class="font-bold text-lg mb-6 text-indigo-900 uppercase tracking-wide"
+            >
+              More
+            </h3>
+            <ul class="space-y-3 text-sm font-medium text-indigo-100">
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-white transition-colors hover:translate-x-1 inline-block transform duration-300"
+                  >Press</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-white transition-colors hover:translate-x-1 inline-block transform duration-300"
+                  >Investor</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-white transition-colors hover:translate-x-1 inline-block transform duration-300"
+                  >Terms</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-white transition-colors hover:translate-x-1 inline-block transform duration-300"
+                  >Privacy</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-white transition-colors hover:translate-x-1 inline-block transform duration-300"
+                  >Help</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-white transition-colors hover:translate-x-1 inline-block transform duration-300"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-indigo-500 pt-6 flex flex-col md:flex-row justify-between items-center bg-blue-600/20 -mx-4 lg:-mx-8 px-4 lg:px-8 pb-4 rounded-t-xl mb-[-24px]"
+        >
+          <div class="flex space-x-4 mb-4 md:mb-0">
+            <a
+              href="#"
+              class="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:scale-110 transition-transform shadow-lg"
+              ><img
+                src="./Assets/Instagram.png"
+                alt="Instagram"
+                class="w-6 h-6"
+            /></a>
+            <a
+              href="#"
+              class="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:scale-110 transition-transform shadow-lg"
+              ><img src="./Assets/WhatsApp.png" alt="WhatsApp" class="w-6 h-6"
+            /></a>
+            <a
+              href="#"
+              class="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:scale-110 transition-transform shadow-lg"
+              ><img src="./Assets/Twitter.png" alt="Twitter" class="w-6 h-6"
+            /></a>
+            <a
+              href="#"
+              class="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:scale-110 transition-transform shadow-lg"
+              ><img
+                src="./Assets/LinkedIn (1).png"
+                alt="LinkedIn"
+                class="w-6 h-6"
+            /></a>
+            <a
+              href="#"
+              class="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:scale-110 transition-transform shadow-lg"
+              ><img src="./Assets/YouTube.png" alt="YouTube" class="w-6 h-6"
+            /></a>
+          </div>
+          <p class="text-xs font-semibold text-indigo-100">
+            Copyright © 2023 askmeidentity. All Rights Reserved
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
